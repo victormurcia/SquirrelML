@@ -9,6 +9,7 @@ import streamlit as st
 import joblib
 import numpy as np
 import random 
+import sklearn
 
 # Load your trained and calibrated model
 # To load the model in Streamlit
