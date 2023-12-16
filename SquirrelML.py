@@ -17,7 +17,7 @@ def main():
     st.title('Predict Squirrel Approach')
 
     # load model
-    with open('cal_Squirrel_RF.pk2', 'rb') as f:
+    with open('cal_Squirrel_RF2.pk2', 'rb') as f:
         squirrel_model = pickle.load(f)
 
     #with open('squirrel_kmeans.pkl', 'rb') as f:
