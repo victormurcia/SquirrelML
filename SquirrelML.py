@@ -15,14 +15,8 @@ import pickle
 # To load the model in Streamlit
 def main():
     st.title('Predict Squirrel Approach')
-
-    # load model
-    #with open('cal_Squirrel_RF2.pkl', 'rb') as f:
-    #    squirrel_model = pickle.load(f)
-
-    #with open('squirrel_kmeans.pkl', 'rb') as f:
-    #    kmeans = pickle.load(f)
-    # Load your trained and calibrated model
+    
+    # Load trained and calibrated model
     squirrel_model = joblib.load('cal_Squirrel_RF.pkl')
     kmeans =         joblib.load('squirrel_kmeans.pkl')  # Adjust the file path as needed
 
@@ -131,7 +125,7 @@ def main():
         prediction = squirrel_model.predict_proba([features])[0, 1] * 100
         st.write(f'Squirrel approach probability: {prediction:.3f}%')
         # Display image based on prediction
-        if prediction < 0.5:
+        if prediction <= 50.0:
             image_path = random.choice(['sad_squirrel1.jpg', 'sad_squirrel2.jpg'])
             st.image(image_path, caption='Sad Squirrel :(')
         else:
