@@ -9,7 +9,7 @@ import streamlit as st
 import joblib
 import numpy as np
 import random 
-import sklearn
+import pickle
 
 # Load your trained and calibrated model
 # To load the model in Streamlit
@@ -17,8 +17,8 @@ def main():
     st.title('Predict Squirrel Approach')
 
     # Load your trained and calibrated model
-    squirrel_model = joblib.load('cal_Squirrel_RF.pkl')
-    kmeans = joblib.load('squirrel_kmeans.pkl')  # Adjust the file path as needed
+    squirrel_model = pickle.load(open('cal_Squirrel_RF.pkl','rb'))#joblib.load('cal_Squirrel_RF.pkl')
+    kmeans =         pickle.load(open('squirrel_kmeans.pkl','rb'))#joblib.load('squirrel_kmeans.pkl')  # Adjust the file path as needed
 
     with st.expander("Location and Time"):
         col1, col2, col3 = st.columns(3)
