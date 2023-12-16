@@ -23,9 +23,9 @@ def main():
     with st.expander("Location and Time"):
         col1, col2, col3 = st.columns(3)
         with col1:
-            X = st.number_input('X Coordinate', format="%.5f", min_value=-73.981159, max_value=-73.949722)
+            X = st.number_input('X Coordinate', format="%.5f", min_value=-73.981159, max_value=-73.949722,step=0.0001)
         with col2:
-            Y = st.number_input('Y Coordinate', format="%.5f", min_value=40.764911, max_value=40.800119)
+            Y = st.number_input('Y Coordinate', format="%.5f", min_value=40.764911, max_value=40.800119,step=0.0001)
             cluster = kmeans.predict(np.array([[X, Y]]))[0]
         with col3:
             time_of_day = st.selectbox('Time of Day', options=['AM', 'PM'])
