@@ -23,7 +23,7 @@ def main():
     #with open('squirrel_kmeans.pkl', 'rb') as f:
     #    kmeans = pickle.load(f)
     # Load your trained and calibrated model
-    squirrel_model = joblib.load('cal_Squirrel_RF.pkl')
+    squirrel_model = joblib.load('cal_Squirrel_RF2.pkl')
     kmeans =         joblib.load('squirrel_kmeans.pkl')  # Adjust the file path as needed
 
     with st.expander("Location and Time"):
