@@ -16,9 +16,15 @@ import pickle
 def main():
     st.title('Predict Squirrel Approach')
 
+    # load model
+    with open('cal_Squirrel_RF.pkl', 'rb') as f:
+        squirrel_model = pickle.load(f)
+
+    with open('squirrel_kmeans.pkl', 'rb') as f:
+        kmeans = pickle.load(f)
     # Load your trained and calibrated model
-    squirrel_model = pickle.load(open('cal_Squirrel_RF.pkl','rb'))#joblib.load('cal_Squirrel_RF.pkl')
-    kmeans =         pickle.load(open('squirrel_kmeans.pkl','rb'))#joblib.load('squirrel_kmeans.pkl')  # Adjust the file path as needed
+    #squirrel_model = pickle.load(open('cal_Squirrel_RF.pkl','rb'))#joblib.load('cal_Squirrel_RF.pkl')
+    #kmeans =         pickle.load(open('squirrel_kmeans.pkl','rb'))#joblib.load('squirrel_kmeans.pkl')  # Adjust the file path as needed
 
     with st.expander("Location and Time"):
         col1, col2, col3 = st.columns(3)
