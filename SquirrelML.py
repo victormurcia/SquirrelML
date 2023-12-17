@@ -16,7 +16,7 @@ import folium
 # Load your trained and calibrated model
 # To load the model in Streamlit
 def main():
-    st.title('Predict Squirrel Approach')
+    st.title('SquirrelML - Predict Squirrel Approach')
 
     # Create a map object
     m = folium.Map(location=[40.783, -73.97], zoom_start=14)  # You can change the default location
