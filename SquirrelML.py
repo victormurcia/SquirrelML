@@ -32,6 +32,7 @@ def main():
     kmeans =         joblib.load('squirrel_kmeans.pkl')  # Adjust the file path as needed
 
     with st.expander("Location and Time"):
+        st.write('Enter coordinates below. Feel free to use the map above to aid you.')
         col1, col2, col3 = st.columns(3)
         with col1:
             X = st.number_input('Longitude', format="%.5f", min_value=-73.981159, max_value=-73.949722,step=0.0001)
