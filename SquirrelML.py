@@ -10,11 +10,22 @@ import joblib
 import numpy as np
 import random 
 import pickle
+from streamlit_folium import folium_static
+import folium
 
 # Load your trained and calibrated model
 # To load the model in Streamlit
 def main():
     st.title('Predict Squirrel Approach')
+
+    # Create a map object
+    m = folium.Map(location=[40.783, -73.97], zoom_start=14)  # You can change the default location
+
+    # Add click functionality
+    folium.LatLngPopup().add_to(m)
+
+    # Render the map
+    folium_static(m)
     
     # Load trained and calibrated model
     squirrel_model = joblib.load('cal_Squirrel_RF.pkl')
